@@ -8,10 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String nUsername, nPassword;
-
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.grey[800],
+    onPrimary: Colors.white,
     primary: Colors.grey[800],
     //minimumSize: Size(88, 36),
     padding: EdgeInsets.all(12),
@@ -34,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
     final username = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      initialValue: nUsername,
+      initialValue: '',
       decoration: InputDecoration(
         hintText: 'Username',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -46,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
 
     final password = TextFormField(
       autofocus: false,
-      initialValue: nPassword,
+      initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',
@@ -62,14 +60,8 @@ class _LoginPageState extends State<LoginPage> {
       child: ElevatedButton(
         style: raisedButtonStyle,
         onPressed: () {
-          if (nUsername == 'bumdestirtomulyo') {
-            if (nPassword == 'inipunyakita') {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Wrap1()));
-            }
-          } else {
-            print("username dan password salah");
-          }
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Wrap1()));
         },
         child: Text(
           "Log In",
@@ -81,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[100],
       body: Center(
         child: ListView(
           shrinkWrap: true,
