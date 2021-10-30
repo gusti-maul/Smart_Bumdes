@@ -18,18 +18,16 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Smart BUMDes", style: new TextStyle(color: Colors.white)),
-        backgroundColor: Colors.grey[800],
-      ),
-      backgroundColor: Colors.grey[800],
       body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [Colors.white, Colors.grey])),
         padding: EdgeInsets.all(30.0),
         child: GridView.count(
           crossAxisCount: 2,
           children: <Widget>[
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(12.0),
+              color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -47,14 +45,17 @@ class _HomeState extends State<Home> {
                         size: 70.0,
                         color: Colors.pink,
                       ),
-                      Text("Frozen Food", style: new TextStyle(fontSize: 18.0))
+                      Text("Frozen Food",
+                          style: new TextStyle(
+                              fontSize: 18.0, color: Colors.white))
                     ],
                   ),
                 ),
               ),
             ),
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(12.0),
+              color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -62,7 +63,7 @@ class _HomeState extends State<Home> {
                     MaterialPageRoute(builder: (context) => PopUpText()),
                   );
                 },
-                splashColor: Colors.black,
+                splashColor: Colors.grey[800],
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -70,16 +71,19 @@ class _HomeState extends State<Home> {
                       Icon(
                         Icons.account_balance,
                         size: 70.0,
-                        color: Colors.blue,
+                        color: Colors.yellow,
                       ),
-                      Text("Unit Pasar", style: new TextStyle(fontSize: 18.0))
+                      Text("Unit Pasar",
+                          style: new TextStyle(
+                              fontSize: 18.0, color: Colors.white))
                     ],
                   ),
                 ),
               ),
             ),
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(12.0),
+              color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -95,16 +99,19 @@ class _HomeState extends State<Home> {
                       Icon(
                         Icons.smartphone,
                         size: 70.0,
-                        color: Colors.black,
+                        color: Colors.lightBlueAccent,
                       ),
-                      Text("KWT", style: new TextStyle(fontSize: 18.0))
+                      Text("KWT",
+                          style: new TextStyle(
+                              fontSize: 18.0, color: Colors.white))
                     ],
                   ),
                 ),
               ),
             ),
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(12.0),
+              color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -120,16 +127,19 @@ class _HomeState extends State<Home> {
                       Icon(
                         Icons.person_pin,
                         size: 70.0,
-                        color: Colors.purple,
+                        color: Colors.lightGreen,
                       ),
-                      Text("Eduwisata", style: new TextStyle(fontSize: 18.0))
+                      Text("Eduwisata",
+                          style: new TextStyle(
+                              fontSize: 18.0, color: Colors.white))
                     ],
                   ),
                 ),
               ),
             ),
             Card(
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.all(12.0),
+              color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -145,9 +155,39 @@ class _HomeState extends State<Home> {
                       Icon(
                         Icons.shopping_cart,
                         size: 70.0,
-                        color: Colors.green,
+                        color: Colors.orange,
                       ),
-                      Text("UMKM", style: new TextStyle(fontSize: 18.0))
+                      Text("UMKM",
+                          style: new TextStyle(
+                              fontSize: 18.0, color: Colors.white))
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.all(12.0),
+              color: Colors.grey[800],
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PopUpText()),
+                  );
+                },
+                splashColor: Colors.black,
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.info,
+                        size: 70.0,
+                        color: Colors.white,
+                      ),
+                      Text("About",
+                          style: new TextStyle(
+                              fontSize: 18.0, color: Colors.white))
                     ],
                   ),
                 ),
@@ -166,18 +206,18 @@ class PopUpText extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Feature not Available',
-            style: new TextStyle(color: Colors.white)),
-        backgroundColor: Colors.grey[800],
+            style: new TextStyle(color: Colors.yellow)),
+        backgroundColor: Colors.red[900],
       ),
       body: Center(
         child: RaisedButton(
           child: Text(
             'Not Available',
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.yellow,
             ),
           ),
-          color: Colors.grey[500],
+          color: Colors.red[900],
           onPressed: () {
             showDialog(
               context: context,
