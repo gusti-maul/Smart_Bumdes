@@ -60,7 +60,9 @@ class _ExpaState extends State<Expa> {
         data: ThemeData(fontFamily: 'm').copyWith(
           dividerColor: Colors.transparent,
           focusColor: Colors.black,
-          primaryColor: Colors.black, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.black),
+          primaryColor: Colors.black,
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: Colors.black),
         ),
         child: ExpansionTile(
           tilePadding: EdgeInsets.fromLTRB(15, 15, 15, 15),
@@ -95,7 +97,7 @@ class _ExpaState extends State<Expa> {
                     height: 5,
                   ),
                   Text(
-                    uang.format(widget.harga),
+                    uang.format(widget.harga), //ini error
                     style: TextStyle(
                       fontSize: 13,
                       color: ex
