@@ -20,7 +20,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.white, Colors.grey])),
+            gradient: LinearGradient(
+                colors: [Colors.grey[400], Colors.white, Colors.grey])),
         padding: EdgeInsets.all(30.0),
         child: GridView.count(
           crossAxisCount: 2,
@@ -172,7 +173,7 @@ class _HomeState extends State<Home> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PopUpText()),
+                    MaterialPageRoute(builder: (context) => InfoText()),
                   );
                 },
                 splashColor: Colors.black,
@@ -203,51 +204,43 @@ class _HomeState extends State<Home> {
 class PopUpText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Feature not Available',
-            style: new TextStyle(color: Colors.yellow)),
-        backgroundColor: Colors.red[900],
+    return new AlertDialog(
+      backgroundColor: Colors.white,
+      title: const Text('ALERT!!'),
+      content: new Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text("Feature not Available"),
+        ],
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text(
-            'Not Available',
-            style: TextStyle(
-              color: Colors.yellow,
-            ),
-          ),
-          color: Colors.red[900],
+      actions: <Widget>[
+        new FlatButton(
           onPressed: () {
-            showDialog(
-              context: context,
-              builder: (BuildContext context) => _buildPopupDialog(context),
-            );
+            Navigator.of(context).pop();
           },
+          textColor: Theme.of(context).primaryColor,
+          child: Text('Close'),
         ),
-      ),
+      ],
     );
   }
 }
 
-Widget _buildPopupDialog(BuildContext context) {
-  return new AlertDialog(
-    title: const Text('ALERT!!'),
-    content: new Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text("Feature not Available"),
-      ],
-    ),
-    actions: <Widget>[
-      new FlatButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        textColor: Theme.of(context).primaryColor,
-        child: Text('Close'),
+class InfoText extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Application Version 1.0.1',
+          style: TextStyle(
+            fontSize: 22.0,
+            color: Colors.black,
+            fontFamily: "Nunito",
+          ),
+        ),
       ),
-    ],
-  );
+    );
+  }
 }
