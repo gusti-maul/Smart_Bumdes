@@ -1,6 +1,6 @@
-# cashier
+# Smart BUMDes
 
-cashier aplication using flutter firebase
+this application as a task of supporting the thematic KKN project in the village of Tirtomulyo, Kendal
 
 # Design UI
 
