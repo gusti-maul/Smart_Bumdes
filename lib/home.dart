@@ -1,5 +1,7 @@
+import 'package:cashier/KWT/kwt.dart';
 import 'package:cashier/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main(List<String> args) {
   runApp(new MaterialApp(
@@ -59,10 +61,14 @@ class _HomeState extends State<Home> {
               color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PopUpText()),
-                  );
+                  Fluttertoast.showToast(
+                      msg: "Feature not Available",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red[300],
+                      textColor: Colors.white,
+                      fontSize: 16.0);
                 },
                 splashColor: Colors.grey[800],
                 child: Center(
@@ -89,7 +95,7 @@ class _HomeState extends State<Home> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PopUpText()),
+                    MaterialPageRoute(builder: (context) => KWT()),
                   );
                 },
                 splashColor: Colors.black,
@@ -115,10 +121,14 @@ class _HomeState extends State<Home> {
               color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PopUpText()),
-                  );
+                  Fluttertoast.showToast(
+                      msg: "Feature not Available",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red[300],
+                      textColor: Colors.white,
+                      fontSize: 16.0);
                 },
                 splashColor: Colors.black,
                 child: Center(
@@ -143,10 +153,14 @@ class _HomeState extends State<Home> {
               color: Colors.grey[800],
               child: InkWell(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PopUpText()),
-                  );
+                  Fluttertoast.showToast(
+                      msg: "Feature not Available",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red[300],
+                      textColor: Colors.white,
+                      fontSize: 16.0);
                 },
                 splashColor: Colors.black,
                 child: Center(
@@ -197,32 +211,6 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class PopUpText extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new AlertDialog(
-      backgroundColor: Colors.white,
-      title: const Text('ALERT!!'),
-      content: new Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text("Feature not Available"),
-        ],
-      ),
-      actions: <Widget>[
-        new FlatButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          textColor: Theme.of(context).primaryColor,
-          child: Text('Close'),
-        ),
-      ],
     );
   }
 }

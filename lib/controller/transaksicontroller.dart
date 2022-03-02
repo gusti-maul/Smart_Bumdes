@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 
 class TransaksiController extends GetxController {
   List transaksi = [];
-  CollectionReference dbtransaksi =
-      FirebaseFirestore.instance.collection('transaksi');
+  CollectionReference dbtransaksi = FirebaseFirestore.instance.collection('s');
 
   addtransaksi({var data, int bayar}) async {
     await dbtransaksi.add({

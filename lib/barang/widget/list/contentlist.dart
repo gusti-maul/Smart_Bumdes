@@ -97,7 +97,7 @@ class _ExpaState extends State<Expa> {
                     height: 5,
                   ),
                   Text(
-                    uang.format(widget.harga), //ini error
+                    uang.format(widget.harga ?? 0), //ini error
                     style: TextStyle(
                       fontSize: 13,
                       color: ex
